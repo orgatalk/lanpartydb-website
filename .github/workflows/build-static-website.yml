@@ -44,6 +44,6 @@ jobs:
 
       - name: Add, commit, and push files
         run: |
-          git add .
+          git add index.html parties/ series/ static/
           git commit -m 'Add static website'
           git push --force origin gh-pages
