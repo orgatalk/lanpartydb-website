@@ -1,0 +1,40 @@
+{% extends 'layout/base.html' %}
+
+{% block body %}
+
+  <h1>Parties <small>{{ parties|length }}</small></h1>
+
+  <div class="block">
+{{ pagination.links }}
+  </div>
+
+  <table class="table--index table--wide">
+    <thead>
+      <tr>
+        <th>{{ _('Title') }}</th>
+        <th>{{ _('Start') }}</th>
+        <th>{{ _('End') }}</th>
+        <th class="number">{{ _('Seats') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for party in parties %}
+      <tr>
+        <td><a href="{{ url_for('.view', slug=party.slug) }}">{{ party.title }}</a></td>
+        <td class="nowrap">{{ party.start_on|dateformat }}</td>
+        <td class="nowrap">{{ party.end_on|dateformat }}</td>
+        <td class="number">{{ party.seats }}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+
+  <div class="block text--centered">
+{{ pagination.info }}
+  </div>
+
+  <div class="block">
+{{ pagination.links }}
+  </div>
+
+{%- endblock %}

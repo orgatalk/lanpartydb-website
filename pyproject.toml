@@ -1,0 +1,42 @@
+[project]
+name = "lanpartydb-website"
+version = "0.1.0"
+description = "Website generator for the OrgaTalk LAN Party Database"
+authors = [
+    { name = "Jochen Kupperschmidt", email = "homework@nwsnet.de" }
+]
+dependencies = [
+    "flask>=3.0.2",
+    "flask-babel>=4.0.0",
+    "flask-paginate>=2023.10.24",
+    "frozen-flask>=1.0.1",
+    "lanpartydb>=0.2.0",
+    "pycountry>=23.12.11",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lanpartydb_website"]
+
+[tool.ruff.format]
+quote-style = "single"
+line-ending = "lf"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+forced-separate = [ "tests" ]
+lines-after-imports = 2
+order-by-type = false

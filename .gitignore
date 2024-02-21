@@ -1,0 +1,5 @@
+# Python 3 bytecode
+__pycache__
+
+# Frozen-Flask build directory
+/build
