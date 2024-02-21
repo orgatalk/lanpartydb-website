@@ -37,7 +37,7 @@ jobs:
           git config user.email "workflow@invalid"
 
       - name: Create new branch
-        run: git switch --orphan dist
+        run: git switch --orphan gh-pages
 
       - name: Move static website to repository root
         run: mv -v build/* .
