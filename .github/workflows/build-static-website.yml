@@ -1,0 +1,46 @@
+name: Build static website
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Download and extract database
+        run: wget -q -O - https://github.com/orgatalk/lanpartydb-data/blob/dist/data.tar.xz | tar xJf -
+
+      - name: Generate static website
+        run: flask freeze
+
+      - name: Configure Git user
+        run: |
+          git config user.name "workflow"
+          git config user.email "workflow@invalid"
+
+      - name: Create new branch
+        run: git switch --orphan dist
+
+      - name: Move static website to repository root
+        run: mv -v build/* .
+
+      - name: Add, commit, and push files
+        run: |
+          git add .
+          git commit -m 'Add static website'
+          git push --force origin gh-pages
