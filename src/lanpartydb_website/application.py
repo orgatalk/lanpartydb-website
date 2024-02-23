@@ -44,6 +44,9 @@ def create_app() -> Flask:
 def _load_data(app: Flask) -> None:
     data_path = Path('./data')
 
+    app.data_commit_hash = loader.load_commit_hash(data_path)
+    app.data_timestamp = loader.load_timestamp(data_path)
+
     series_list = loader.load_series(data_path)
     parties = loader.load_parties(data_path)
 
