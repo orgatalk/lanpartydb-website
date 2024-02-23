@@ -193,7 +193,6 @@ table,
 /* header */
 
 .site-header {
-  background-color: var(--color-darkest);
   padding-bottom: 4rem;
   padding-top: 3rem;
 }
@@ -228,6 +227,7 @@ table,
 /* body */
 
 .site-body {
+  background-color: var(--color-dark);
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
@@ -235,7 +235,6 @@ table,
 /* footer */
 
 .site-footer {
-  background-color: var(--color-darkest);
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
