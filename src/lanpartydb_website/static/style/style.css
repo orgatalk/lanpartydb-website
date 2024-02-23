@@ -200,6 +200,7 @@ table,
 
 .site-header .site-title {
   font-size: 2rem; /* 32px / 16px */
+  line-height: 1.1;
 }
 
 
