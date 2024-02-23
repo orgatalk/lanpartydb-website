@@ -42,8 +42,11 @@ jobs:
       - name: Move static website to repository root
         run: mv -v build/* .
 
+      - name: Create CNAME file
+        run: echo "lanpartydb.orgatalk.de" > CNAME
+
       - name: Add, commit, and push files
         run: |
-          git add index.html parties/ series/ static/
+          git add index.html parties/ series/ static/ CNAME
           git commit -m 'Add static website'
           git push --force origin gh-pages
