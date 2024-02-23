@@ -301,6 +301,10 @@ th {
   padding-right: var(--row-padding-horizontal);
 }
 
+:is(th, td).centered {
+  text-align: center;
+}
+
 :is(th, td).number {
   text-align: right;
 }

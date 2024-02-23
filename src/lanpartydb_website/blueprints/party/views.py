@@ -36,6 +36,7 @@ def index(page: int):
     return {
         'parties': parties_slice,
         'pagination': pagination,
+        'countries': countries,
     }
 
 
