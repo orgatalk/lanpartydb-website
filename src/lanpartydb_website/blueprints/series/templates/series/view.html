@@ -11,13 +11,14 @@
   {%- endif %}
 
   {%- if parties %}
-    <div class="data-label">{{ _('Parties') }} ({{ parties|length }})</div>
+  <div class="data-label">{{ _('Parties') }} ({{ parties|length }})</div>
   <div class="data-value">
     <ul class="noindent">
     {%- for party in parties %}
       <li><a href="{{ url_for('party.view', slug=party.slug) }}">{{ party.title }}</a></li>
     {%- endfor %}
     </ul>
+  </div>
   {%- endif %}
 
 {%- endblock %}
