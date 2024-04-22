@@ -423,7 +423,3 @@ table.table--wide {
 .contributors img {
   display: block;
 }
-
-:is(ol, ul).noindent {
-  padding-left: 1rem;
-}

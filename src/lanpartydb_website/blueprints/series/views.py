@@ -7,6 +7,7 @@ lanpartydb_website.blueprints.series.views
 """
 
 from flask import abort, current_app
+from pycountry import countries
 
 from ...util.blueprint import create_blueprint
 from ...util.templating import templated
@@ -37,4 +38,5 @@ def view(slug: str):
     return {
         'series': series,
         'parties': parties,
+        'countries': countries,
     }
