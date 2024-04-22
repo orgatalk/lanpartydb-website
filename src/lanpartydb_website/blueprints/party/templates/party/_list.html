@@ -11,7 +11,7 @@
     <tbody>
       {%- for party in parties %}
       <tr>
-        <td><a href="{{ url_for('.view', slug=party.slug) }}">{{ party.title }}</a></td>
+        <td><a href="{{ url_for('party.view', slug=party.slug) }}">{{ party.title }}</a></td>
         <td class="centered">
         {%- if party.location %}
           {%- with country = countries.get(alpha_2=party.location.country_code) %}
