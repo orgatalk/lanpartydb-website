@@ -130,15 +130,6 @@ a:not(:hover) {
   }
 }
 
-.block--centered {
-  margin-inline: auto;
-  width: fit-content;
-}
-
-.text--centered {
-  text-align: center;
-}
-
 
 h1,
 h2,
@@ -146,6 +137,14 @@ table,
 .block,
 .data-value {
   margin-bottom: 1.5rem;
+}
+
+:is(
+  .block,
+  table,
+).is-centered-h {
+  margin-inline: auto;
+  width: fit-content;
 }
 
 
@@ -422,4 +421,8 @@ table.table--wide {
 
 .contributors img {
   display: block;
+}
+
+.text--centered {
+  text-align: center;
 }
