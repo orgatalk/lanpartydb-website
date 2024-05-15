@@ -9,7 +9,7 @@ dependencies = [
     "flask>=3.0.2",
     "flask-babel>=4.0.0",
     "flask-paginate>=2023.10.24",
-    "frozen-flask>=1.0.1",
+    "frozen-flask>=1.0.2",
     "lanpartydb>=0.2.0",
     "pycountry>=23.12.11",
 ]
