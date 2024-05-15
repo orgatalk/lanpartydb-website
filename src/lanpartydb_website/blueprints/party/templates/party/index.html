@@ -2,20 +2,20 @@
 
 {% block body %}
 
-  <h1>Parties <small>{{ pagination.total }}</small></h1>
+<h1>Parties <small>{{ pagination.total }}</small></h1>
 
-  <div class="block">
+<div class="block">
 {{ pagination.links }}
-  </div>
+</div>
 
 {% include 'party/_list.html' %}
 
-  <div class="block text--centered">
+<div class="block text--centered">
 {{ pagination.info }}
-  </div>
+</div>
 
-  <div class="block">
+<div class="block">
 {{ pagination.links }}
-  </div>
+</div>
 
 {%- endblock %}

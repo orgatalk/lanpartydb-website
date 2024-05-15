@@ -2,40 +2,40 @@
 
 {% block body %}
 
-  <div class="block block--centered">
-    <p class="text--centered">This database covers:</p>
-    <div class="row row--collapsible row--center">
-      <div class="column text--centered">
-        <a href="{{ url_for('party.index') }}">
-          <div class="bignumber">{{ party_count }}</div>
-          <div class="bignumber-caption">parties</div>
-        </a>
-      </div>
-      <div class="column text--centered">
-        <a href="{{ url_for('series.index') }}">
-          <div class="bignumber">{{ series_count }}</div>
-          <div class="bignumber-caption">party series</div>
-        </a>
-      </div>
-      <div class="column text--centered">
-        <div class="bignumber">{{ country_count }}</div>
-        <div class="bignumber-caption">countries</div>
-      </div>
-      <div class="column text--centered">
-        <div class="bignumber">0</div>
-        <div class="bignumber-caption">organizers<br><small>(yet)</small></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="block" style="margin-top: 3rem;">
-    <p>A bunch of people were so kind to collect and submit data:</p>
-    <div class="block--centered">
-      <a href="https://github.com/orgatalk/lanpartydb-data/contributors" class="contributors">
-        <img src="https://contrib.rocks/image?repo=orgatalk/lanpartydb-data&columns=5">
+<div class="block block--centered">
+  <p class="text--centered">This database covers:</p>
+  <div class="row row--collapsible row--center">
+    <div class="column text--centered">
+      <a href="{{ url_for('party.index') }}">
+        <div class="bignumber">{{ party_count }}</div>
+        <div class="bignumber-caption">parties</div>
       </a>
     </div>
-    <p>Check out the <a href="https://github.com/orgatalk/lanpartydb-data/blob/main/CONTRIBUTING.md">Contribution Guide</a> to see how you can help improving this database.</p>
+    <div class="column text--centered">
+      <a href="{{ url_for('series.index') }}">
+        <div class="bignumber">{{ series_count }}</div>
+        <div class="bignumber-caption">party series</div>
+      </a>
+    </div>
+    <div class="column text--centered">
+      <div class="bignumber">{{ country_count }}</div>
+      <div class="bignumber-caption">countries</div>
+    </div>
+    <div class="column text--centered">
+      <div class="bignumber">0</div>
+      <div class="bignumber-caption">organizers<br><small>(yet)</small></div>
+    </div>
   </div>
+</div>
+
+<div class="block" style="margin-top: 3rem;">
+  <p>A bunch of people were so kind to collect and submit data:</p>
+  <div class="block--centered">
+    <a href="https://github.com/orgatalk/lanpartydb-data/contributors" class="contributors">
+      <img src="https://contrib.rocks/image?repo=orgatalk/lanpartydb-data&columns=5">
+    </a>
+  </div>
+  <p>Check out the <a href="https://github.com/orgatalk/lanpartydb-data/blob/main/CONTRIBUTING.md">Contribution Guide</a> to see how you can help improving this database.</p>
+</div>
 
 {%- endblock %}

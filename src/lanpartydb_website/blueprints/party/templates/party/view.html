@@ -2,80 +2,80 @@
 
 {% block body %}
 
-  <div class="breadcrumbs"><a href="{{ url_for('.index') }}">{{ _('Parties') }}</a> /</div>
-  <h1>{{ party.title }}</h1>
+<div class="breadcrumbs"><a href="{{ url_for('.index') }}">{{ _('Parties') }}</a> /</div>
+<h1>{{ party.title }}</h1>
 
-  <div class="grid-2columns">
-    <div>
+<div class="grid-2columns">
+  <div>
 
-      <div class="row" style="column-gap: 2rem;">
-        <div>
+    <div class="row" style="column-gap: 2rem;">
+      <div>
 
-          <div class="data-label">{{ _('Start') }}</div>
-          <div class="data-value">{{ party.start_on|dateformat }}</div>
+        <div class="data-label">{{ _('Start') }}</div>
+        <div class="data-value">{{ party.start_on|dateformat }}</div>
 
-        </div>
-        <div>
-
-          <div class="data-label">{{ _('End') }}</div>
-          <div class="data-value">{{ party.end_on|dateformat }}</div>
-
-        </div>
       </div>
+      <div>
 
-    </div>
-    <div>
+        <div class="data-label">{{ _('End') }}</div>
+        <div class="data-value">{{ party.end_on|dateformat }}</div>
 
-      {%- if party.seats %}
-      <div class="data-label">{{ _('Seats') }}</div>
-      <div class="data-value">{{ party.seats }}</div>
-      {%- endif %}
-
-    </div>
-    <div>
-
-      {%- if party.location %}
-      <div class="data-label">{{ _('Location') }}</div>
-      <div class="data-value">
-        {%- with location = party.location %}
-          {{ location.name }}<br>
-          {{ location.street }}<br>
-          {{ location.zip_code }} {{ location.city }}<br>
-          {%- if country %}
-            {{ country.flag }} {{ country.name }}
-          {%- else %}
-            {{ location.country_code }}
-          {%- endif %}
-          {%- if location.latitude and location.longitude %}
-            <br>
-            <a href="http://www.openstreetmap.org/?lat={{ location.latitude }}&lon={{ location.longitude }}&mlat={{ location.latitude }}&mlon={{ location.longitude }}&zoom=15">View on OpenStreetMap</a>
-          {%- endif %}
-        {%- endwith %}
       </div>
-      {%- endif %}
-
     </div>
-    <div>
 
-      {%- if party.links and party.links.website %}
-        {%- with website = party.links.website %}
-      <div class="data-label">{{ _('Website') }}</div>
-      <div class="data-value">
-          {%- if not website.offline %}
-          <a href="{{ website.url }}">{{ website.url }}</a>
-          {%- else %}
-          {{ website.url }} <small class="dim">(offline)</small>
-          {%- endif %}
-      </div>
-        {%- endwith %}
-      {%- endif %}
-
-    </div>
   </div>
+  <div>
 
-  {%- if series %}
-  <div class="data-label">{{ _('Part of series') }}</div>
-  <div class="data-value"><a href="{{ url_for('series.view', slug=series.slug) }}">{{ series.name }}</a></div>
-  {%- endif %}
+    {%- if party.seats %}
+    <div class="data-label">{{ _('Seats') }}</div>
+    <div class="data-value">{{ party.seats }}</div>
+    {%- endif %}
+
+  </div>
+  <div>
+
+    {%- if party.location %}
+    <div class="data-label">{{ _('Location') }}</div>
+    <div class="data-value">
+      {%- with location = party.location %}
+        {{ location.name }}<br>
+        {{ location.street }}<br>
+        {{ location.zip_code }} {{ location.city }}<br>
+        {%- if country %}
+          {{ country.flag }} {{ country.name }}
+        {%- else %}
+          {{ location.country_code }}
+        {%- endif %}
+        {%- if location.latitude and location.longitude %}
+          <br>
+          <a href="http://www.openstreetmap.org/?lat={{ location.latitude }}&lon={{ location.longitude }}&mlat={{ location.latitude }}&mlon={{ location.longitude }}&zoom=15">View on OpenStreetMap</a>
+        {%- endif %}
+      {%- endwith %}
+    </div>
+    {%- endif %}
+
+  </div>
+  <div>
+
+    {%- if party.links and party.links.website %}
+      {%- with website = party.links.website %}
+    <div class="data-label">{{ _('Website') }}</div>
+    <div class="data-value">
+        {%- if not website.offline %}
+        <a href="{{ website.url }}">{{ website.url }}</a>
+        {%- else %}
+        {{ website.url }} <small class="dim">(offline)</small>
+        {%- endif %}
+    </div>
+      {%- endwith %}
+    {%- endif %}
+
+  </div>
+</div>
+
+{%- if series %}
+<div class="data-label">{{ _('Part of series') }}</div>
+<div class="data-value"><a href="{{ url_for('series.view', slug=series.slug) }}">{{ series.name }}</a></div>
+{%- endif %}
 
 {%- endblock %}

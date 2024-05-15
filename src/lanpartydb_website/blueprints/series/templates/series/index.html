@@ -2,23 +2,23 @@
 
 {% block body %}
 
-  <h1>Series <small>{{ series_and_party_counts|length }}</small></h1>
+<h1>Series <small>{{ series_and_party_counts|length }}</small></h1>
 
-  <table class="table--index">
-    <thead>
-      <tr>
-        <th>{{ _('Name') }}</th>
-        <th class="number">{{ _('Parties') }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {%- for series, party_count in series_and_party_counts %}
-      <tr>
-        <td><a href="{{ url_for('.view', slug=series.slug) }}">{{ series.name }}</a></td>
-        <td class="number">{{ party_count }}</td>
-      </tr>
-      {%- endfor %}
-    </tbody>
-  </table>
+<table class="table--index">
+  <thead>
+    <tr>
+      <th>{{ _('Name') }}</th>
+      <th class="number">{{ _('Parties') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for series, party_count in series_and_party_counts %}
+    <tr>
+      <td><a href="{{ url_for('.view', slug=series.slug) }}">{{ series.name }}</a></td>
+      <td class="number">{{ party_count }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
 
 {%- endblock %}

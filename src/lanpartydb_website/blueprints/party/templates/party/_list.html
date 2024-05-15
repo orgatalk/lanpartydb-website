@@ -1,28 +1,28 @@
-  <table class="table--index table--wide">
-    <thead>
-      <tr>
-        <th>{{ _('Title') }}</th>
-        <th></th>
-        <th>{{ _('Start') }}</th>
-        <th>{{ _('End') }}</th>
-        <th class="number">{{ _('Seats') }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {%- for party in parties %}
-      <tr>
-        <td><a href="{{ url_for('party.view', slug=party.slug) }}">{{ party.title }}</a></td>
-        <td class="centered">
-        {%- if party.location %}
-          {%- with country = countries.get(alpha_2=party.location.country_code) %}
-          <span title="{{ country.name }}">{{ country.flag }}</span>
-          {%- endwith %}
-        {%- endif %}
-        </td>
-        <td class="nowrap">{{ party.start_on|dateformat }}</td>
-        <td class="nowrap">{{ party.end_on|dateformat }}</td>
-        <td class="number">{{ party.seats }}</td>
-      </tr>
-      {%- endfor %}
-    </tbody>
-  </table>
+<table class="table--index table--wide">
+  <thead>
+    <tr>
+      <th>{{ _('Title') }}</th>
+      <th></th>
+      <th>{{ _('Start') }}</th>
+      <th>{{ _('End') }}</th>
+      <th class="number">{{ _('Seats') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for party in parties %}
+    <tr>
+      <td><a href="{{ url_for('party.view', slug=party.slug) }}">{{ party.title }}</a></td>
+      <td class="centered">
+      {%- if party.location %}
+        {%- with country = countries.get(alpha_2=party.location.country_code) %}
+        <span title="{{ country.name }}">{{ country.flag }}</span>
+        {%- endwith %}
+      {%- endif %}
+      </td>
+      <td class="nowrap">{{ party.start_on|dateformat }}</td>
+      <td class="nowrap">{{ party.end_on|dateformat }}</td>
+      <td class="number">{{ party.seats }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
