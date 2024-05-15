@@ -20,7 +20,7 @@ blueprint = create_blueprint('party', __name__, url_prefix='/parties')
 
 
 @blueprint.get('/', defaults={'page': 1})
-@blueprint.get('/pages/<int:page>/')
+@blueprint.get('/-/pages/<int:page>/')
 @templated
 def index(page: int):
     per_page = request.args.get('per_page', type=int, default=50)
