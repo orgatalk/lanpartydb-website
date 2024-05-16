@@ -407,6 +407,10 @@ table.table--wide {
 
 /* misc */
 
+.homepage-section:not(:last-child) {
+  margin-block-end: 3rem;
+}
+
 .breadcrumbs {
   margin-bottom: -1rem;
 }
