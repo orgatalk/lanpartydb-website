@@ -18,8 +18,10 @@
       </a>
     </div>
     <div class="column text--centered">
-      <div class="bignumber">{{ country_count }}</div>
-      <div class="bignumber-caption">countries</div>
+      <a href="{{ url_for('party.index_countries') }}">
+        <div class="bignumber">{{ country_count }}</div>
+        <div class="bignumber-caption">countries</div>
+      </a>
     </div>
     <div class="column text--centered">
       <div class="bignumber">0</div>

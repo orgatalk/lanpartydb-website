@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block body %}
+
+<h1>{{ _('Countries') }} <small>{{ countries_with_party_count|length }}</small></h1>
+
+<table class="table--index is-centered-h">
+  <thead>
+    <tr>
+      <th colspan="2">{{ _('Country') }}</th>
+      <th class="number">{{ _('Parties') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for country, party_count in countries_with_party_count|sort(attribute='0.name') %}
+    <tr>
+      <td>{{ country.flag }}</td>
+      <td><a href="{{ url_for('party.index_by_country', country_code=country.alpha_2.lower()) }}">{{ country.name }}</a></td>
+      <td class="number">{{ party_count }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+
+{%- endblock %}
