@@ -3,8 +3,12 @@
 {% block body %}
 
 <div class="homepage-section">
+  <p class="text--centered">This is a database of <strong>past, public LAN parties</strong>.</p>
+</div>
+
+<div class="homepage-section">
   <div class="block is-centered-h">
-    <p class="text--centered">This database covers:</p>
+    <p class="text--centered">So far, it covers:</p>
     <div class="row row--collapsible row--center">
       <div class="column text--centered">
         <a href="{{ url_for('party.index') }}">
@@ -26,7 +30,7 @@
       </div>
       <div class="column text--centered">
         <div class="bignumber">0</div>
-        <div class="bignumber-caption">organizers<br><small>(yet)</small></div>
+        <div class="bignumber-caption">organizers<br><small class="dim">(yet)</small></div>
       </div>
     </div>
   </div>
