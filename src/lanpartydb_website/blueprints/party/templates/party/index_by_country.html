@@ -5,10 +5,6 @@
 <div class="breadcrumbs"><a href="{{ url_for('.index_countries') }}">{{ 'Countries' }}</a> /</div>
 <h1>{{ country.flag }} {{ country.name }} <small>{{ pagination.total }}</small></h1>
 
-<div class="block">
-{{ pagination.links }}
-</div>
-
 {% include 'party/_list.html' %}
 
 <div class="block pagination-info">
