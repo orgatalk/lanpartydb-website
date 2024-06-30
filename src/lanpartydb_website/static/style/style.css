@@ -341,6 +341,11 @@ table.table--wide {
 
 /* pagination */
 
+.pagination-info {
+  font-size: 0.8125rem; /* 13px / 16px */
+  text-align: center;
+}
+
 .pagination {
   display: flex;
   gap: 0 0.25rem;
@@ -349,32 +354,32 @@ table.table--wide {
   width: fit-content;
 }
 
-.page-item {
-  border: transparent solid 1px;
-  font-size: 0.75rem; /* 12px / 16px */
-}
-
-.page-item:not(:is(.active, .disabled)):hover {
-  background-color: var(--color-darkest);
-  border-color: var(--color-border);
-  border-radius: 5px;
-}
-
-.page-item:is(.active, .disabled):hover {
-  cursor: not-allowed;
-}
-
 .page-link {
-  display: block;
+  background-color: var(--color-darkest);
+  border-radius: 0.25rem;
+  display: flex;
+  column-gap: 0.375rem;
+  font-size: 0.75rem; /* 12px / 16px */
   padding: 0.5rem 0.75rem;
 }
 
-.page-link:hover {
+.page-item:not(.disabled) .page-link:hover {
+  background-color: var(--color-accent) !important;
+  color: var(--color-darkest);
   text-decoration: none;
 }
 
-.page-item.active .page-link {
-  border-color: transparent;
+.page-item:is(.active, .disabled) .page-link {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.page-item.disabled {
+  display: none;
+}
+
+.page-item .sr-only {
+  display: none;
 }
 
 
