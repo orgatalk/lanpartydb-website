@@ -26,10 +26,8 @@
   </div>
   <div>
 
-    {%- if party.seats %}
     <div class="data-label">{{ _('Seats') }}</div>
-    <div class="data-value">{{ party.seats }}</div>
-    {%- endif %}
+    <div class="data-value">{% if party.seats is not none %}{{ party.seats }}{% else %}<span class="dim">?</span>{% endif %}</div>
 
   </div>
   <div>

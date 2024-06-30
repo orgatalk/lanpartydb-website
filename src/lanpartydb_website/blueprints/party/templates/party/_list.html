@@ -21,7 +21,7 @@
       </td>
       <td class="nowrap">{{ party.start_on|dateformat }}</td>
       <td class="nowrap">{{ party.end_on|dateformat }}</td>
-      <td class="number">{{ party.seats }}</td>
+      <td class="number">{% if party.seats is not none %}{{ party.seats }}{% else %}<span class="dim">?</span>{% endif %}</td>
     </tr>
     {%- endfor %}
   </tbody>
