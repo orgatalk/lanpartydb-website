@@ -23,6 +23,7 @@ def index():
 
     return {
         'series_and_party_counts': series_and_party_counts,
+        'countries': countries,
     }
 
 

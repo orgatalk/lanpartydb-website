@@ -170,6 +170,10 @@ table,
   gap: 1rem;
 }
 
+.row.is-compact {
+  gap: 0.5rem;
+}
+
 .row--collapsible {
   flex-direction: column;
 }
