@@ -2,9 +2,11 @@
 name = "lanpartydb-website"
 version = "0.1.0"
 description = "Website generator for the OrgaTalk LAN Party Database"
+readme = "README.md"
 authors = [
     { name = "Jochen Kupperschmidt", email = "homework@nwsnet.de" }
 ]
+requires-python = ">=3.11"
 dependencies = [
     "flask>=3.0.3",
     "flask-babel>=4.0.0",
@@ -13,8 +15,6 @@ dependencies = [
     "lanpartydb>=0.8.0",
     "pycountry>=24.6.1",
 ]
-readme = "README.md"
-requires-python = ">= 3.11"
 
 [build-system]
 requires = ["hatchling"]
