@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The LAN Party Database by OrgaTalk</title>
+    <title>The LAN Party Database</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
 {% block head %}{% endblock %}
   </head>
@@ -12,7 +12,7 @@
     <header class="site-header">
       <div class="container">
         <div class="site-title"><a href="{{ url_for('homepage.index') }}">The LAN Party Database</a></div>
-        <div class="site-subtitle">by <a href="https://www.orgatalk.de/">OrgaTalk</a></div>
+        <div class="site-subtitle">Remembering the good times.</div>
       </div>
     </header>
 
@@ -36,6 +36,7 @@
     <footer class="site-footer">
       <div class="container">
         <small>
+          <p>An <a href="https://www.orgatalk.de/">OrgaTalk</a> project since 2024</p>
           <p>
             <a href="https://github.com/orgatalk/lanpartydb-data">Data</a> ({{ data_commit_hash }} / {{ data_timestamp|datetimeformat('long') }}) collected with the help of <a href="https://github.com/orgatalk/lanpartydb-data/graphs/contributors">contributors</a>.
             <br>
