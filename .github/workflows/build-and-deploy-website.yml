@@ -16,20 +16,26 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "0.4.27"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version-file: ".python-version"
+
+      - name: Install project
+        run: uv sync
 
       - name: Download and extract database
         run: wget -q -O - https://github.com/orgatalk/lanpartydb-data/raw/dist/data.tar.xz | tar xJf -
 
-      - name: Install dependencies
-        run: pip install -r requirements.lock
-
       - name: Generate static website
-        run: flask freeze
+        run: uv run flask freeze
 
       - name: Configure Git user
         run: |
